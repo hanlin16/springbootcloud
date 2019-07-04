@@ -1,0 +1,9 @@
+Jpa 根据id删除对象时，会先查询，不存在则抛出异常：EmptyResultDataAccessException，
+
+TODO   删除时不需要自己判断是否存在；全局异常增加捕获EmptyResultDataAccessException异常
+
+
+HttpMediaTypeNotSupportedException  请求方式
+
+//org.springframework.web.HttpMediaTypeNotSupportedException:
+    Content type 'application/x-www-form-urlencoded;charset=UTF-8' not supported

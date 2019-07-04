@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.myfutech.demo</groupId>
+    <artifactId>unif-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-RELEASE</version>
+    <modules>
+        <module>unif-user-service</module>
+        <module>unif-hr-system</module>
+        <module>unif-eureka</module>
+    </modules>
+
+    <parent>
+        <groupId>com.myfutech</groupId>
+        <artifactId>unif</artifactId>
+        <version>1.0-RELEASE</version>
+    </parent>
+
+    <properties>
+        <common.version>RELEASE</common.version>
+        <springfox.version>2.7.0</springfox.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- swagger restful api 文档 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.myfutech.common.spring</groupId>
+                <artifactId>common-spring-jpa</artifactId>
+                <version>${common.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.myfutech.common.spring</groupId>
+                <artifactId>common-spring-base</artifactId>
+                <version>${common.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.myfutech.common.util</groupId>
+                <artifactId>common-util</artifactId>
+                <version>${common.version}</version>
+                <scope>compile</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.myfutech.common.fastdfs</groupId>
+                <artifactId>common-fastdfs</artifactId>
+                <version>${common.version}</version>
+                <scope>compile</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <distributionManagement>
+        <repository>
+            <id>myfutech-releases</id>
+            <url>http://www.myfutech.com/nexus/content/repositories/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>myfutech-snapshots</id>
+            <url>http://www.myfutech.com/nexus/content/repositories/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>myfutech-public</id>
+            <url> http://www.myfutech.com/nexus/content/groups/public/</url>
+            <releases><enabled>true</enabled></releases>
+            <snapshots><enabled>true</enabled></snapshots>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

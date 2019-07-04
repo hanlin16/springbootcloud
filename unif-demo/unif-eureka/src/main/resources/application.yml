@@ -1,0 +1,18 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: eureka-server
+eureka:
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    defaultZone: http://localhost:8888/eureka/
+  server:
+      waitTimeInMsWhenSyncEmpty: 0
+      peer-eureka-nodes-update-interval-ms: 10000
+      enableSelfPreservation: false

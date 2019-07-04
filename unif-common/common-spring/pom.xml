@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.myfutech.common</groupId>
+        <artifactId>unif-common</artifactId>
+        <version>2.0.1-RELEASE</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.myfutech.common.spring</groupId>
+    <artifactId>common-spring</artifactId>
+    <packaging>pom</packaging>
+    <version>2.0.1-RELEASE</version>
+    <modules>
+        <module>common-spring-jpa</module>
+        <module>common-spring-base</module>
+        <module>common-spring-system</module>
+        <module>common-spring-sms-starter</module>
+        <module>common-spring-push-starter</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.myfutech.common.util</groupId>
+            <artifactId>common-util</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+</project>

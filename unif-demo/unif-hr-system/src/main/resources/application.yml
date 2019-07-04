@@ -1,0 +1,39 @@
+server:
+  port: 8890
+spring:
+  application:
+    name: hr-system
+  mvc:
+    date-format: yyyy-MM-dd HH:mm:ss
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8888/eureka/
+  instance:
+    prefer-ip-address: true
+# 配置请求GZIP压缩
+feign:
+   compression:
+          request:
+              enabled: true
+              mime-types: text/xml,application/xml,application/json # 配置压缩支持的MIME TYPE
+              min-request-size: 2048 # 配置压缩数据大小的下限
+          response:
+              enabled: true
+   httpclient:
+     connection-timeout: 60000
+   client:
+     config:
+       default:
+         connectTimeout: 12000
+         readTimeout: 12000
+         errorDecoder: com.myfutech.common.spring.feign.FeignExceptionErrorDecoder
+         requestInterceptors:
+                   - com.myfutech.common.spring.feign.FeignAddHeaderRequestInterceptor
+
+logging:
+  level:
+    root: info
