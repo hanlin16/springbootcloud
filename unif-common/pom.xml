@@ -25,7 +25,7 @@
         <jdk.version>1.8</jdk.version>
 
         <spring.version>5.0.9.RELEASE</spring.version>
-        <spring-security-web.version>5.0.9.RELEASE</spring-security-web.version>
+        <spring-security-web.version>5.2.10.RELEASE</spring-security-web.version>
         <spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
         <starter-data-redis.version>2.0.6.RELEASE</starter-data-redis.version>
         <spring-data-redis.version>2.0.11.RELEASE</spring-data-redis.version>
