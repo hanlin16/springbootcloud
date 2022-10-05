@@ -26,7 +26,7 @@
 
         <spring.version>5.0.9.RELEASE</spring.version>
         <spring-security-web.version>5.0.9.RELEASE</spring-security-web.version>
-        <spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
+        <spring-data-jpa.version>2.1.9.RELEASE</spring-data-jpa.version>
         <starter-data-redis.version>2.0.6.RELEASE</starter-data-redis.version>
         <spring-data-redis.version>2.0.11.RELEASE</spring-data-redis.version>
         <feign-hystrix.version>9.7.0</feign-hystrix.version>
